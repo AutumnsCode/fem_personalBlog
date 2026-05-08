@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+import Avatar from '../assets/images/image-avatar.jpg'
+import Navigation from "./Navigation.astro";
+import ThemeToggle from "./ThemeToggle";
+---
+
+<header class="w-full bg-nav-bg text-nav-link border border-border p-1.5 rounded-xl flex items-center justify-between ">
+  <a href="/">
+    <Image src={Avatar} alt="I am Paula. It will direct back to the homepage." class="size-10 object-cover rounded-xl" loading="eager"/>
+  </a>
+
+  <div class="flex gap-1.5 sm:gap-5 relative ">
+    <Navigation />
+    <ThemeToggle client:only />
+  </div>
+</header>
