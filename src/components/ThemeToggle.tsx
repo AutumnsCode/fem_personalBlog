@@ -19,23 +19,23 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       className="size-10 rounded-xl bg-toggle-btn border border-border overflow-hidden relative"
     >
-      {/* Sonne */}
+      {/* Mond-Icon: wird im Light Mode angezeigt */}
       <img
         src={MoonIcon.src}
-        alt="Light mode"
+        alt="Switch to Dark mode"
         className={`
-          theme-icon absolute inset-0 m-auto size-6 transition-all duration-300 ease-out
-          ${isDark ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"}
-        `}
+           theme-icon absolute inset-0 m-auto size-6 transition-all duration-300 ease-out
+-          ${isDark ? "translate-y-full opacity-0" : "translate-y-0 opacity-100"}
+         `}
       />
 
-      {/* Mond */}
+      {/* Sonnen-Icon: wird im Dark Mode angezeigt */}
       <img
         src={SunIcon.src}
         alt="Dark mode"
         className={`
           theme-icon absolute inset-0 m-auto size-6 transition-all duration-300 ease-out
-          ${isDark ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}
+          ${isDark ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}
         `}
       />
     </button>
