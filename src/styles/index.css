@@ -1,5 +1,92 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
+  --color-neutral-900: hsl(20 6% 10%);
+  --color-neutral-800: hsl(20 5% 12%);
+  --color-neutral-700: hsl(26 7% 19%);
+  --color-neutral-600: hsl(30 3% 28%);
+  --color-neutral-400: hsl(0 1% 75%);
+  --color-neutral-300: hsl(30 6% 86%);
+  --color-neutral-200: hsl(30 11% 93%);
+  --color-neutral-100: hsl(30 33% 98%);
+  --color-neutral-0: hsl(0 0% 100%);
+
+  --color-blue-200: hsl(207 94% 94%);
+  --color-blue-500: hsl(206 95% 78%);
+  --color-blue-700: hsl(206 61% 66%);
+  --color-blue-800: hsl(206 45% 55%);
+  --color-blue-900: hsl(206 95% 15%);
+
+  --color-green-200: hsl(125 38% 94%);
+  --color-green-700: hsl(133 38% 72%);
+  --color-green-500: hsl(142 100% 26%);
+  --color-green-900: hsl(133 38% 12%);
+
+  --color-yellow-200: hsl(40 100% 94%);
+  --color-yellow-500: hsl(39 93% 73%);
+  --color-yellow-700: hsl(38 95% 47%);
+  --color-yellow-900: hsl(38 92% 15%);
+
+  --color-red-400: hsl(4 86% 58%);
+  --color-red-600: hsl(4 74% 49%);
+
+  --color-background: var(--color-neutral-100);
+  --color-heading-text: var(--color-neutral-700);
+  --color-body-text: var(--color-neutral-600);
+  --color-link-text: var(--color-neutral-700);
+  --color-border: var(--color-neutral-200);
+  --color-nav-bg: var(--color-neutral-0);
+  --color-nav-active: var(--color-neutral-700);
+  --color-nav-link: var(--color-neutral-600);
+  --color-toggle-btn: var(--color-neutral-100);
+  --color-success-border: var(--color-green-500);
+  --color-success-bg: var(--color-green-200);
+  --color-warning-border: var(--color-yellow-500);
+  --color-warning-bg: var(--color-yellow-200);
+  --color-info-border: var(--color-blue-500);
+  --color-info-bg: var(--color-blue-200);
+  --color-accent: var(--color-blue-700);
+  --color-submit-btn: var(--color-blue-500);
+
   --container-xl: 40rem;
+
+  --rounded-xl: 0.625rem;
+  --rounded-2xl: 0.75rem;
+  --rounded-3xl: 1rem;
+  --rounded-4xl: 1.25rem;
+  --rounded-5xl: 1.5rem;
+}
+
+.dark {
+    --color-background: var(--color-neutral-900);
+    --color-heading-text: var(--color-neutral-0);
+    --color-body-text: var(--color-neutral-300);
+    --color-link-text: var(--color-neutral-0);
+    --color-border: var(--color-neutral-700);
+    --color-nav-bg: var(--color-neutral-800);
+    --color-nav-active: var(--color-neutral-0);
+    --color-nav-link: var(--color-neutral-300);
+    --color-toggle-btn: var(--color-neutral-800);
+    --color-success-border: var(--color-green-700);
+    --color-success-bg: var(--color-green-900);
+    --color-warning-border: var(--color-yellow-700);
+    --color-warning-bg: var(--color-yellow-900);
+    --color-info-border: var(--color-blue-800);
+    --color-info-bg: var(--color-blue-900);
+    --color-accent: var(--color-blue-900);
+    --color-submit-btn: var(--color-blue-800);
+  }
+
+
+body,.theme-icon {
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .theme-icon {
+    transition: none;
+  }
 }
