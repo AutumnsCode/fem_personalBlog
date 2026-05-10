@@ -3,11 +3,11 @@ interface Props {
   classList?: string;
 }
 
-const { classList } = Astro.props;
+const { classList = "" } = Astro.props;
 ---
 
 <section
-  class={`not-last-of-type:border-b py-8 border-border font-sans text-preset-7 space-y-6 text-body-text lg:py-12 ${classList}`}
+  class={`not-last-of-type:border-b py-8 border-border font-sans text-preset-7 space-y-6 text-body-text lg:py-12 ${classList}`.trim()}
 >
   <slot />
 </section>

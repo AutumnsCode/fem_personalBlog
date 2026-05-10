@@ -35,7 +35,9 @@ Here's a tiny snippet that shows how you might use JavaScript to greet users and
   // 2. Greet the user
   console.log(`Hello, ${userName}! Welcome to my blog.`);
   // 3. A simple function that adds two numbers
-  function addNumbers(a, b) {\n  return a + b;\n}\n\n
+  function addNumbers(a, b) {
+     return a + b;
+  }  
   // 4. Let's give it a try
   const result = addNumbers(5, 7);
   console.log(`The sum of 5 and 7 is: ${result}`);
@@ -44,7 +46,9 @@ Here's a tiny snippet that shows how you might use JavaScript to greet users and
 - **Line 1** uses `prompt()` to get input from the user.
 - **Line 2** uses template literals (the backticks) to insert `userName` into the string.
 - **Lines 3–7** define a function to add two numbers, then return the result.
-- **Line 10** calls `addNumbers()` and logs the result to the console.\n\nI love these little examples because they showcase just how straightforward JavaScript can be. Of course, there's *so* much more to learn, but this is a neat place to start.
+- **Line 10** calls `addNumbers()` and logs the result to the console.
+
+I love these little examples because they showcase just how straightforward JavaScript can be. Of course, there's *so* much more to learn, but this is a neat place to start.
 
 ---
 

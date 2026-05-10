@@ -36,7 +36,7 @@ export const Social_Media_Links = [
     icon: GithubIcon.src
   },
   {
-    label: "Linkedin",
+    label: "LinkedIn",
     href: "https://linkedin.com/",
     icon: LinkinIcon.src
   },

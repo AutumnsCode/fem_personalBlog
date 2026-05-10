@@ -26,7 +26,12 @@ If you've been around my blog before, you know how *excited* I get about front-e
 
 - **Fluid Layouts**: Instead of fixed widths, use percentages or `max-width` for images and containers. This helps elements adapt smoothly when screens shrink or expand.
 - **Media Queries**: These allow you to apply specific CSS rules based on screen size (or orientation). For example, you might change the layout from a single column on mobile to two columns on a tablet.
-- **Mobile-First Approach**: Start styling for the smallest screens, then add layers of complexity as devices get bigger. It can feel odd at first, but it often simplifies your CSS and improves performance.\n\n---\n\n## A Tiny Example\n\nBelow is a quick code snippet illustrating how you might use **media queries** to tweak your layout between mobile and larger screens:
+- **Mobile-First Approach**: Start styling for the smallest screens, then add layers of complexity as devices get bigger. It can feel odd at first, but it often simplifies your CSS and improves performance.
+
+---
+## A Tiny Example
+
+Below is a quick code snippet illustrating how you might use **media queries** to tweak your layout between mobile and larger screens:
 
 ```css
 /* Mobile styles (default) */
@@ -55,7 +60,8 @@ I won't lie—wrangling responsive layouts can be a bit of a dance. One minute y
 ## Tips to Keep in Mind
 
 - **Start Small**: Focus on mobile first. Get that looking solid before dealing with bigger screens.
-- **Test on Real Devices**: Browser dev tools are awesome, but always double-check on an actual phone or tablet.\n- **Stay Organized**: Comment your media queries and keep them in a logical order (like from smallest to largest).
+- **Test on Real Devices**: Browser dev tools are awesome, but always double-check on an actual phone or tablet.
+- **Stay Organized**: Comment your media queries and keep them in a logical order (like from smallest to largest).
 - **Break Down Complex Layouts**: If a section is too tricky, try dividing it into smaller parts you can manage step by step.
 
 ---
