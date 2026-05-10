@@ -92,6 +92,7 @@
   --color-info-bg: var(--color-blue-200);
   --color-accent: var(--color-blue-500);
   --color-submit-btn: var(--color-blue-500);
+  --color-social-bg: var(--color-neutral-0);
 
   --container-xl: 40rem;
 
@@ -120,6 +121,7 @@
     --color-info-bg: var(--color-blue-900);
     --color-accent: var(--color-blue-700);
     --color-submit-btn: var(--color-blue-800);
+    --color-social-bg: var(--color-neutral-800);
   }
 
 

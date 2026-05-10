@@ -1,0 +1,19 @@
+---
+import { Social_Media_Links } from "../constants";
+import SocialMediaButton from "./SocialMediaButton.astro";
+---
+
+<footer
+  class="border-t border-border pt-4 pb-8 flex justify-between items-center"
+>
+  <p class="text-preset-8 text-body-text">Made with ❤️ and ☕️</p>
+  <ul class="flex gap-4">
+    {
+      Social_Media_Links.map((link) => (
+        <li>
+          <SocialMediaButton link={link} isFooter />
+        </li>
+      ))
+    }
+  </ul>
+</footer>

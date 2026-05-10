@@ -1,0 +1,24 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type BlogEntry = CollectionEntry<"blogs">;
+
+interface Props {
+  blog: BlogEntry;
+}
+
+const { blog } = Astro.props;
+
+const date = blog.data.publishedAt.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric"
+})
+---
+
+<li class="space-y-1">
+  <h3 class="text-preset-5 text-heading-text">
+    <a href={`/blog/${blog.data.slug}`}>{blog.data.title}</a>
+  </h3>
+  <p class="text-preset-8-italic">{date}</p>
+</li>

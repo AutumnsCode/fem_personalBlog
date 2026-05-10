@@ -1,0 +1,34 @@
+---
+interface Props {
+  link: {
+    label: string;
+    href: string;
+    icon: string;
+  };
+  isFooter?: boolean;
+}
+
+const { link, isFooter = false } = Astro.props;
+---
+
+{
+  isFooter ? (
+    <a
+      href={link.href}
+      target="_blank"
+      class=""
+    >
+      <span class="sr-only">{link.label}</span>
+      <img src={link.icon} alt={link.label} />
+    </a>
+  ) : (
+    <a
+      href={link.href}
+      target="_blank"
+      class="size-10 grid place-content-center border border-border rounded-xl bg-social-bg "
+    >
+      <span class="sr-only">{link.label}</span>
+      <img src={link.icon} alt={link.label} class="dark:invert" />
+    </a>
+  )
+}
