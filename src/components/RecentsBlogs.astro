@@ -10,10 +10,11 @@ interface Props {
 const { blog } = Astro.props;
 
 const date = blog.data.publishedAt.toLocaleDateString("en-US", {
+  timeZone: "UTC",
   year: "numeric",
   month: "long",
-  day: "numeric"
-})
+  day: "numeric",
+});
 ---
 
 <li class="space-y-1">

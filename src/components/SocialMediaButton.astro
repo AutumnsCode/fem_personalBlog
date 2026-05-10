@@ -13,22 +13,24 @@ const { link, isFooter = false } = Astro.props;
 
 {
   isFooter ? (
-    <a
-      href={link.href}
-      target="_blank"
-      class=""
-    >
+    <a href={link.href} target="_blank" rel="noopener noreferrer">
       <span class="sr-only">{link.label}</span>
-      <img src={link.icon} alt={link.label} />
+      <img src={link.icon} alt="" aria-hidden="true" />
     </a>
   ) : (
     <a
       href={link.href}
       target="_blank"
+      rel="noopener noreferrer"
       class="size-10 grid place-content-center border border-border rounded-xl bg-social-bg "
     >
       <span class="sr-only">{link.label}</span>
-      <img src={link.icon} alt={link.label} class="dark:invert" />
+      <img
+        src={link.icon}
+        alt={link.label}
+        aria-hidden="true"
+        class="dark:invert"
+      />
     </a>
   )
 }

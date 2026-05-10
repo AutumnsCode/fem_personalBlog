@@ -9,7 +9,11 @@ Hey there! It's Paulina, back again to share a bit about the tools that make my 
 ---
 
 ## Why the Right Tools Matter
-When I first started coding, I had no idea how many options were out there. But over time, I've come to realize:\n\n> “The right tools can turn a frustrating coding session into a fun and productive one.”\n\nBelow are a few of my favorites that keep me on track and motivated.
+When I first started coding, I had no idea how many options were out there. But over time, I've come to realize:
+
+> “The right tools can turn a frustrating coding session into a fun and productive one.”
+
+Below are a few of my favorites that keep me on track and motivated.
 
 ---
 
@@ -50,7 +54,9 @@ Setting up a simple `.gitignore` file has saved me a million times from pushing 
 These two **VS Code** extensions have become non-negotiable:
 
 - **Prettier** automatically formats your code, so you don't spend hours aligning brackets or spaces.
-- **ESLint** helps spot and fix potential errors or bad practices in your JavaScript.\n\nIf you've ever stared at your code and wondered why something is off by two spaces, these tools will be your new besties.
+- **ESLint** helps spot and fix potential errors or bad practices in your JavaScript.
+
+If you've ever stared at your code and wondered why something is off by two spaces, these tools will be your new besties.
 
 ---
 

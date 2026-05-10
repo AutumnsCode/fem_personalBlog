@@ -46,7 +46,9 @@ As I continue learning, I plan to:
 
 1. **Build small projects** to practice my skills in real-world scenarios  
 2. **Share coding tips** and tutorials on this blog to help fellow beginners  
-3. **Challenge myself** with advanced JavaScript and frameworks like React\n\nI'm excited about what lies ahead and can't wait to see how my skills grow. If you're also on a coding journey, or even thinking about starting one, feel free to follow along. I'll be posting more articles about what I learn, mistakes I make, and small victories along the way.
+3. **Challenge myself** with advanced JavaScript and frameworks like React
+
+I'm excited about what lies ahead and can't wait to see how my skills grow. If you're also on a coding journey, or even thinking about starting one, feel free to follow along. I'll be posting more articles about what I learn, mistakes I make, and small victories along the way.
 
 ---
 
