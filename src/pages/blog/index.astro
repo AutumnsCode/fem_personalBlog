@@ -1,7 +1,21 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layout/BaseLayout.astro";
+import SectionLayout from "../../layout/SectionLayout.astro";
+import BlogArtikel from "../../components/BlogArtikel.astro";
+
+const blogs = (await getCollection("blogs")).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
 ---
 
 <BaseLayout>
-  <h1>Hello</h1>
+  <SectionLayout>
+    <h1 class="header-v2">My Articles</h1>
+    <p class="">
+      Below are all my recent blog posts. Click on any title to read the full
+      article.
+    </p>
+    <div>
+      {blogs.map((blog) => <BlogArtikel blog={blog} />)}
+    </div>
+  </SectionLayout>
 </BaseLayout>
