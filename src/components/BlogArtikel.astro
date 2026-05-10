@@ -16,8 +16,13 @@ const date = blog.data.publishedAt.toLocaleDateString("en-US", {
 });
 ---
 
-<article class="border-t border-border py-5 space-y-2 text-preset-7 ">
-  <h2 class="text-preset-5 text-heading-text"><a href={`/blog/${blog.data.slug}`}>{blog.data.title}</a></h2>
-  <p class="text-preset-8-italic">{date}</p>
+<article class="border-t border-border py-5 space-y-2 text-preset-7">
+  <h2 class="text-preset-5 text-heading-text">
+    <a href={`/blog/${blog.data.slug}`}>{blog.data.title}</a>
+  </h2>
+  <time
+    class="text-preset-8-italic"
+    datetime={blog.data.publishedAt.toISOString()}>{date}</time
+  >
   <p>{blog.data.description}</p>
 </article>
