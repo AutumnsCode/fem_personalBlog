@@ -40,7 +40,7 @@ import MenuIconClose from "../assets/images/icon-menu-close.svg";
       <ul class="hidden sm:flex items-center gap-6">
         {Nav_Links.map((nav) => <NavLink nav={nav} />)}
       </ul>
-      <ThemeToggle client:only />
+      <ThemeToggle client:only="react" />
     </div>
   </nav>
 
