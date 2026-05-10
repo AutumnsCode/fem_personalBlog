@@ -1,0 +1,35 @@
+---
+import { actions } from "astro:actions";
+
+interface Props {
+  isMobile?: boolean;
+  nav: {
+    label: string;
+    href: string;
+  };
+}
+
+const { nav, isMobile = false } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+---
+
+<li class="relative *:text-preset-8">
+  {
+    isMobile ? (
+      <a
+        href={nav.href}
+        class={`${currentPath === nav.href ? "text-neutral-900 dark:text-neutral-0" : "text-nav-link "}`}
+      >
+        {nav.label}
+      </a>
+    ) : (
+      <a
+        href={nav.href}
+        class={` z-10 relative after:absolute after:block after:w-0 after:h-1 after:bg-accent after:bottom-px after:-z-10 after:dark:bg-accent/50 after:transition-all after:duration-300 ${currentPath === nav.href ? "text-nav-active after:w-full" : "text-nav-link  hover:after:w-full"}`}
+      >
+        {nav.label}
+      </a>
+    )
+  }
+</li>
