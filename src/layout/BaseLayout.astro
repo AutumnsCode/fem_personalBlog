@@ -1,6 +1,7 @@
 ---
 import "../styles/index.css";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
@@ -23,10 +24,13 @@ import Header from "../components/Header.astro";
       }
     </script>
   </head>
-  <body class="relative min-h-screen bg-background p-4 font-sans">
-    <div class="w-full mx-auto max-w-xl sm:px-0 sm:py-6 lg:pb-8">
+  <body class="relative min-h-screen bg-background px-4 font-sans">
+    <div class="w-full mx-auto max-w-xl sm:px-0 sm:pt-6 lg:pt-8">
       <Header />
-      <slot />
+      <div class="border-x border-border mx-2.25 px-2.5">
+        <slot />
+        <Footer />
+      </div>
     </div>
   </body>
 </html>

@@ -18,7 +18,7 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="size-10 rounded-xl bg-toggle-btn border border-border overflow-hidden relative"
+      className="size-10 rounded-xl bg-toggle-btn border border-border overflow-hidden relative cursor-pointer"
     >
       {/* Mond-Icon: wird im Light Mode angezeigt */}
       <img

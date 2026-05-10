@@ -1,7 +1,57 @@
 ---
-import BaseLayout from '../layout/BaseLayout.astro'
+import { getCollection, type CollectionEntry } from "astro:content";
+import SocialMediaButton from "../components/SocialMediaButton.astro";
+import { Social_Media_Links } from "../constants";
+import RecentsBlogs from "../components/RecentsBlogs.astro";
+
+import BaseLayout from "../layout/BaseLayout.astro";
+import SectionLayout from "../layout/SectionLayout.astro";
+
+type BlogEntry = CollectionEntry<"blogs">;
+
+const blogs = await getCollection("blogs");
+
+const recentBlogs = blogs
+  .sort(
+    (a: BlogEntry, b: BlogEntry) =>
+      b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
+  )
+  .slice(0, 5);
 ---
 
 <BaseLayout>
-	<h1>Hello</h1>
+  <SectionLayout>
+    <h1
+      class="text-heading-text w-fit text-preset-2 relative after:absolute after:w-full after:h-1.5 after:bg-accent/80 after:bottom-1.25 after:left-0"
+    >
+      Hi, I'm Paulina👋
+    </h1>
+    <p>
+      I'm on a journey to become a front-end web developer. I love building
+      little projects, trying out new coding techniques, and sharing what I
+      learn along the way. When I'm not at my desk, you'll find me reading,
+      hiking through the mountains, or challenging myself on rock-climbing
+      walls.
+    </p>
+    <p>
+      I started this blog to document my progress, keep myself accountable, and
+      hopefully inspire anyone else who's learning to code. Welcome to my corner
+      of the internet, and thanks for stopping by!
+    </p>
+
+    <div class="flex gap-3">
+      {Social_Media_Links.map((link) => <SocialMediaButton link={link} />)}
+    </div>
+  </SectionLayout>
+  <SectionLayout classList="space-y-8">
+    <h2
+      class="text-preset-2 w-fit text-heading-text relative after:absolute after:bottom-2 after:-right-11 after:bg-accent after:h-0.75 after:w-10 after:block"
+    >
+      Latest Articles
+    </h2>
+    <ul class="space-y-6">
+      {recentBlogs.map((blog: BlogEntry) => <RecentsBlogs blog={blog} />)}
+    </ul>
+    <a href="/blog" class="text-preset-6 text-link-text w-fit relative after:absolute after:block after:bottom-0.5 after:left-0 after:w-full after:h-0.75 after:bg-accent">View all articles</a>
+  </SectionLayout>
 </BaseLayout>
