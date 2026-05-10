@@ -1,17 +1,102 @@
 ---
-import { Image } from "astro:assets";
-import Avatar from '../assets/images/image-avatar.jpg'
-import Navigation from "./Navigation.astro";
+import { Nav_Links } from "../constants/index";
+import NavLink from "./NavLink.astro";
 import ThemeToggle from "./ThemeToggle";
+
+import Avatar from "../assets/images/image-avatar.jpg";
+import MenuIcon from "../assets/images/icon-menu.svg";
+import MenuIconClose from "../assets/images/icon-menu-close.svg";
 ---
 
-<header class="w-full bg-nav-bg text-nav-link border border-border p-1.5 rounded-xl flex items-center justify-between ">
-  <a href="/">
-    <Image src={Avatar} alt="I am Paula. It will direct back to the homepage." class="size-10 object-cover rounded-xl" loading="eager"/>
-  </a>
+<header class="relative">
+  <nav
+    class="w-full bg-nav-bg text-nav-link border border-border p-1.5 rounded-xl flex items-center justify-between z-10"
+  >
+    <a href="/">
+      <img src={Avatar.src} alt="" class="size-10 object-cover rounded-xl" />
+      <span class="sr-only">Home Page</span>
+    </a>
 
-  <div class="flex gap-1.5 sm:gap-5 relative ">
-    <Navigation />
-    <ThemeToggle client:only />
-  </div>
+    <div class="flex gap-1.5 sm:gap-5">
+      <button
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        id="menu-btn"
+        class="sm:hidden size-10 grid place-content-center relative group *:transition-all *:duration-300 cursor-pointer aria-expanded:dark:bg-white aria-expanded:bg-black rounded-xl border border-transparent"
+      >
+        <img
+          src={MenuIcon.src}
+          alt=""
+          class="dark:invert absolute inset-0 m-auto opacity-100 scale-100 group-aria-expanded:opacity-0 group-aria-expanded:scale-0"
+        />
+        <img
+          src={MenuIconClose.src}
+          alt=""
+          class="dark:invert absolute inset-0 m-auto opacity-0 scale-0 group-aria-expanded:opacity-100 group-aria-expanded:scale-100"
+        />
+      </button>
+
+      <ul class="hidden sm:flex items-center gap-6">
+        {Nav_Links.map((nav) => <NavLink nav={nav} />)}
+      </ul>
+      <ThemeToggle client:only />
+    </div>
+  </nav>
+
+  <nav
+    id="mobile-nav"
+    aria-labelledby="menu-btn"
+    aria-expanded="false"
+    hidden
+    class="border border-border bg-nav-bg px-3 py-1.5 mt-4 relative rounded-lg shadow-lg
+      transition-all duration-300 ease-out
+      opacity-0 -translate-y-2 z-99
+      aria-expanded:opacity-100
+      aria-expanded:translate-y-0 aria-expanded:before:absolute
+      aria-expanded:before:h-5 aria-expanded:before:border-x aria-expanded:before:-top-5 aria-expanded:before:left-0 aria-expanded:before:ml-1 aria-expanded:before:border-border aria-expanded:before:w-[calc(100%-0.5rem)] aria-expanded:-z-10"
+  >
+    <ul class="*:py-1.5 *:not-last:border-b *:not-last:border-border">
+      {Nav_Links.map((nav) => <NavLink nav={nav} isMobile />)}
+    </ul>
+  </nav>
 </header>
+
+<script is:inline>
+  const btn = document.getElementById("menu-btn");
+  const nav = document.getElementById("mobile-nav");
+
+  function closeMenu() {
+    nav.setAttribute("aria-expanded", "false");
+    btn.setAttribute("aria-expanded", "false");
+    nav.hidden = true;
+  }
+
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation(); // verhindert sofortiges Schließen
+    const isOpen = nav.getAttribute("aria-expanded") === "true";
+
+    nav.setAttribute("aria-expanded", !isOpen);
+    btn.setAttribute("aria-expanded", !isOpen);
+    nav.hidden = isOpen;
+  });
+
+  // Klick außerhalb → schließen
+  document.addEventListener("click", (e) => {
+    const isOpen = nav.getAttribute("aria-expanded") === "true";
+
+    if (!isOpen) return;
+
+    // Wenn Klick NICHT auf Button oder Menü
+    if (!nav.contains(e.target) && !btn.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // ESC → schließen
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeMenu();
+    }
+  });
+</script>
